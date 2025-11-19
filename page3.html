@@ -13,7 +13,7 @@
     <header>
         <h1>situação de aprendizagem</h1>
         <nav>
-            <a href="main.html">main</a>
+            <a href="index.html">main</a>
             <a href="page1.html">page 1</a>
             <a href="page2.html">page 2</a>
             <a href="page4.html">page 4</a>
@@ -24,21 +24,102 @@
         <h2></h2>
 
 
-        <!-- fluxograma -->
+        <!-- sgbd -->
         <div class="section">
             <h3><span class="section-icon"></span> O que é um SGBD?</h3>
             <div class="section-grid">
                 <div class="section-text">
-                    <p>Um SGBD (Sistema Gerenciador de Banco de Dados) é um software usado para criar, armazenar, organizar, gerenciar e acessar bancos de dados. Ele funciona como uma camada entre o usuário/sistema e os dados, garantindo segurança, integridade e eficiência no acesso às informações.</p>
-                    <h3><span class="section-icon"></span> simbologia</h3>
-                    <p>Terminal (Elipse ou Retângulo com cantos arredondados): Indica início ou fim do processo.</p>
+                    <p>Um SGBD (Sistema Gerenciador de Banco de Dados) é um software usado para criar, armazenar,
+                        organizar, gerenciar e acessar bancos de dados. Ele funciona como uma camada entre o
+                        usuário/sistema e os dados, garantindo segurança, integridade e eficiência no acesso às
+                        informações.</p>
+                    <h3><span class="section-icon"></span> tipos</h3>
+                    <p>SGBD Relacionais (RDBMS)</p>
+                    <p>SGBD Não Relacionais (NoSQL)</p>
+
+
                 </div>
                 <div class="section-image">
-                    <img src="fluxograma_simbologia.webp" alt="">
+                    <img src="sgbd.png" alt="">
                 </div>
             </div>
         </div>
 
+        <!-- dicionario -->
+        <div class="section">
+            <h3><span class="section-icon"></span> dicionario de dados</h3>
+            <br>
+            <div class="section-grid">
+                <div class="section-text">
+                    <h3><span class="section-icon"></span>O que é um dicionário de dados?</h3>
+                    <p>Um dicionário de dados é um repositório de informações que descreve todos os elementos de dados
+                        de um banco de dados, ele funciona como um manual.</p>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- tipos de dados -->
+        <div class="section">
+            <h3><span class="section-icon"></span>Quais os tipos de dados de um banco de dados?</h3>
+            <div class="section-grid">
+                <div class="section-text">
+                    <sub-h3><span class="section-sub-icon"></span>numericos</sub-h3>
+                    <p>INT / INTEGER — número inteiro</p>
+                    <p>SMALLINT — inteiro menor</p>
+                    <p>BIGINT — inteiro maior</p>
+                    <p>DECIMAL / NUMERIC — números com precisão definida (ex.: dinheiro)</p>
+                    <p>FLOAT / REAL / DOUBLE — números com ponto flutuante</p>
+                    <sub-h3><span class="section-sub-icon"></span>texto (strings):</sub-h3>
+                    <p>CHAR(n) — tamanho fixo</p>
+                    <p>VARCHAR(n) — tamanho variável</p>
+                    <p>TEXT — textos grandes</p>
+                    <p>CLOB — grandes blocos de texto</p>
+                    <sub-h3><span class="section-sub-icon"></span>booleanos:</sub-h3>
+                    <p>BOOLEAN — verdadeiro ou falso (TRUE / FALSE)</p>
+                    <sub-h3><span class="section-sub-icon"></span>Tipos Binários:</sub-h3>
+                    <p>BLOB — imagens, PDFs, vídeos, etc.</p>
+                    <p>BINARY / VARBINARY — dados binários de tamanho fixo ou variável</p>
+                    <sub-h3><span class="section-sub-icon"></span>Tipos Especiais (dependem do SGBD):</sub-h3>
+                    <p>JSON — documentos JSON (PostgreSQL, MySQL 5.7+)</p>
+                    <p>XML — dados estruturados em XML</p>
+                    <p>UUID — identificadores únicos</p>
+                    <p>GEOMETRY / POINT / GIS — dados geoespaciais</p>
+                    <p>ENUM — lista de valores pré-definidos</p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- modelagem -->
+        <div class="section">
+            <h3><span class="section-icon"></span> que é uma modelagem de banco de dados?</h3>
+            <div class="section-grid">
+                <div class="section-text">
+                    <p>A modelagem de banco de dados é o processo de planejar, organizar e estruturar os dados antes de criá-los em um SGBD.</p>
+                    <h3><span class="section-icon"></span> modelo DER</h3>
+                    <p>O DER (Diagrama Entidade-Relacionamento) é um modelo gráfico usado na fase de modelagem para representar:</p>
+                    <p>Entidades (tabelas do banco),</p>
+                    <p>Atributos (campos de cada tabela),</p>
+                    <p>Relacionamentos entre entidades (1:N, 1:1, N:M).</p>
+                    <p>Retângulos → entidades</p>
+                    <p>Elipses → atributos</p>
+                    <p>Losangos → relacionamentos</p>
+                    <p>Cardinalidades → 1, N, etc.</p>
+                    <h3><span class="section-icon"></span> modelo MER</h3>
+                    <p>O MER é o modelo teórico criado por Peter Chen que dá origem ao DER.
+                        Ou seja:</p>
+                        <p>MER → a teoria/abordagem</p>
+                        <p>DER → o diagrama desenhado baseado nessa teoria</p>
+                        <p>MER = conceito/modelo lógico</p>
+                        <p>DER = representação gráfica do MER</p>
+                </div>
+                <div class="section-image">
+                    <img src="sgbd.png" alt="">
+                </div>
+            </div>
+        </div>
 
 
     </div>
