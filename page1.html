@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<link rel="shortcut icon" href="arasaka.png" type="image/x-icon">
 <link rel="stylesheet" href="page1_style.css">
+<script src="page1.js" defer></script>
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +15,7 @@
     <header>
         <h1>situação de aprendizagem</h1>
         <nav>
+            <p>areas</p>
             <a href="index.html">main</a>
             <a href="page2.html">page 2</a>
             <a href="page3.html">page 3</a>
@@ -36,7 +39,7 @@
             </ul>
 
             <div class="highlight">
-                Fórmula da Lei de Ohm: V = R × I
+                Fórmula da Lei de Ohm: V = R x I
             </div>
         </div>
 
@@ -258,11 +261,134 @@
                 </div>
             </div>
         </div>
+<!-- display -->
+        <div class="section">
+            <h3><span class="section-icon"></span> exemplo de programa para leitura de dados de um sensor analógico, acionando saídas digitais.</h3>
+                <pre class="code">
+                    const express = require('express')
+const app = express()
+const { SerialPort, ReadlineParser } = require('serialport')
+const readline = require('readline')
+
+const cors = require('cors')
+
+const PORT = 3000   // PORT do protocolo TCP
+const hostname = 'localhost'    // nome do Computador e seu IP = 127.0.0.1 (IP de teste)
+
+const BAUD_RATE = 9600
+const SERIAL_PORT = "COM9"
+
+// ------ config de Middleware ----------
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
+app.use(cors())
+
+// -------- INICIALIZAÇÃO ARDUINO -------------
+const arduino = new SerialPort({
+    path: SERIAL_PORT,
+    baudRate: BAUD_RATE,
+})
+
+const parserDados = arduino.pipe(new ReadlineParser({delimiter: "\r\n"}))
+
+arduino.on("open", ()=&gt;{
+    console.log(`Conectado ao Arduino em ${SERIAL_PORT}`)
+})
+
+arduino.on("error", (err)=&gt;{
+    console.error('Erro na comunicação serial', err)
+})
+
+// --- parser das linhas: garantir a recepção completa dos dados
+parserDados.on("dados", (dad)=&gt;{
+    const linha = dad.toString().trim()
+
+    if(linha &gt; 0){
+        console.log('Arduino: ',linha)
+    }
+})
+
+// -------- leitura do teclado para testes / troca de dados manuais -----------
+
+const teclado = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+})
+
+teclado.on("line", (input)=&gt;{
+    const comando2 = input.trim()
+
+    if(comando2 === 's' || comando2 === 'd'){
+        arduino.write(comando2, (err)=&gt;{
+            if(err){
+                console.error("Erro ao enviar ocomando pelo teclado: ", err)
+            }else{
+                console.log(`Comando: ${comando2} enviado ao arduino via teclado`)
+            }
+        })
+    }else{
+        console.log("Digite 's' (ligar) ou 'd' (desligar) ")
+    }
+})
+
+// ------- programando as rotas http =&gt; endpoints -----
+
+app.get('/ligar', (req,res)=&gt;{
+    arduino.write("s", (err)=&gt;{
+        if(err){
+            console.error("Erro ao escrever no arduino: ", err)
+            return res.status(500).json({ led: "erro", detalhe: "falha ao enviar o comando"})
+        }
+    })
+    res.status(200).json({ led: "ligado"})
+})
+
+app.get('/desligar', (req,res)=&gt;{
+    arduino.write("d", (err)=&gt;{
+        if(err){
+            console.error("Erro ao escrever no arduino: ", err)
+            return res.status(500).json({ led: "erro", detalhe: "falha ao enviar o comando"})
+        }
+    })
+    res.status(200).json({ led: "desligado"})
+})
+
+
+
+
+app.listen(PORT, hostname, ()=&gt;{
+    console.log(`Servidor rodando em ${hostname}:${PORT}`)
+    console.log("Digite 's' para ligar e 'd' para desligar")
+    console.log('-------------------------------------------')
+})
+</pre>
+        </div>
+
+
+        <!-- calculadora -->
+        <div class="section">
+            <div class="center">
+                <h3><span class="section-icon"></span>calculadora</h3>
+                <div class="section-grid">
+                    <div class="section-text">
+
+                        <p>ensira 2 das caixas com valores os desejados e o valor vazio sera calculado utilizando a lei
+                            de Ohm</p>
+                        <input type="number" id="R" placeholder="resistencia"><br>
+                        <input type="number" id="V" placeholder="voltagem"><br>
+                        <input type="number" id="I" placeholder="corrente"><br>
+                        <button onclick="calcularOhm()">calcular</button>
+                        <div id="res"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2024 Situação de Aprendizagem - Fundamentos da Eletrônica</p>
+        <p>&copy; 2025 Situação de Aprendizagem - Fundamentos da Eletrônica</p>
     </footer>
 </body>
 

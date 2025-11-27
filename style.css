@@ -11,6 +11,23 @@
             color: #333;
         }
 
+        .img {
+            display:flex;
+            justify-content: center;
+            margin-top: 80px;
+            min-height: calc(100vh - 725px);
+            font-size: large;
+        }
+
+        .pos_img {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            display:flex;
+            justify-content: center;
+            margin-top: 25px;
+            margin-bottom: 250px;
+            font-size: xx-large;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
