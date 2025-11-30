@@ -63,14 +63,17 @@ function ordenar() {
 }
 
 function ordenar_bubblesort() {
+    let res = document.getElementById('res4')
     let n = 10
     let min = 1, max = 20
     let arr = []
+    res.innerHTML = ` `
+
     for (let i = 0; i < n; i++) {
         arr.push(gerarAleatorio(min, max))
     }
-    console.log(arr)
 
+    console.log(arr)
 
     for (let j = 0; j < arr.length - 1; j++) {
         for (let i = 0; i < arr.length - j - 1; i++) {
@@ -81,6 +84,45 @@ function ordenar_bubblesort() {
             }
         }
     }
+    res.innerHTML += `array ordenado ${arr} `
     console.log(arr)
 }
-ordenar_bubblesort()
+
+
+function temperatura(){
+    let res = document.getElementById('res5')
+    let F = Number(document.getElementById('C').value)
+    let C = Number(document.getElementById('F').value)
+    res.innerHTML = ``
+    
+    if(F === 0 && C > 0){
+        F = (C * 9 / 5) + 32
+        res.innerHTML += ` temperatura convertida em fahrenheit: ${F.toFixed(2)}`
+
+    }else if(C === 0){
+        C = (F - 32) * 5 / 9
+        res.innerHTML += ` temperatura convertida em celsius: ${C.toFixed(2)}`
+
+    }
+
+
+}
+
+function soma_arr(){
+    let res = document.getElementById('res6')
+    let min = 1, max = 220
+    let n = 10
+    let soma = 0 
+    let arr = []
+    res.innerHTML = ` `
+
+    for (let i = 0; i < n; i++) {
+        arr.push(gerarAleatorio(min, max))
+        soma += arr[i] 
+    }
+
+    console.log(arr)
+    console.log(soma)
+    res.innerHTML += `array: ${arr} </br> soma dos elementos: ${soma} `
+
+} soma_arr()

@@ -59,12 +59,14 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1rem;
+            padding-left: 20px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
+            text-align: center;
         }
 
         .nav-links a:hover {

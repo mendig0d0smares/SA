@@ -153,6 +153,25 @@ h2 {
     padding: 30px;
     min-height: 250px;
 }
+.section-image-portugol {
+    display: flex;                
+    justify-content: center;      
+    align-items: center;          
+    flex-wrap: wrap;            
+    gap: 20px;                    
+    background: #dad8d8;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 250px;
+}
+
+.section-image-portugol img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
 
 .image-placeholder {
     background: linear-gradient(135deg, #e0e0e0 25%, transparent 25%, transparent 75%, #e0e0e0 75%, #e0e0e0),

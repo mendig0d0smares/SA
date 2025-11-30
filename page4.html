@@ -16,10 +16,12 @@
         <h1>Caldart INC</h1>
         <nav>
             <p>areas</p>
-            <a href="index.html">main</a>
-            <a href="page1.html">page 1</a>
-            <a href="page2.html">page 2</a>
-            <a href="page3.html">page 3</a>
+            <a href="index.html">inicio</a>
+            <a href="page1.html">Fundamentos de Eletroeletrônica</a>
+            <a href="page2.html">Lógica Computacional</a>
+            <a href="page3.html">Fundamentos de Banco de Dados</a>
+            <a href="page5.html">Fundamentos de Redes</a>
+            <a href="page6.html">Fundamentos de Tecnologia da Informação</a>
         </nav>
     </header>
 
@@ -200,6 +202,76 @@
                 </div>
             </div>
         </div>
+        <!-- temperatura -->
+        <div class="section">
+            <h3><span class="section-icon"></span>conversor de temperatura</h3>
+            <div class="section-grid">
+                <div class="section-text">
+                    <p>insira APENAS o valor que deseja converter</p>
+                    <input type="number" id="C" placeholder="celsius">
+                    <br>
+                    <input type="number" id="F" placeholder="fahrenheit">
+                    <br>
+                    <button onclick="calc_imc()">calcular</button>
+                    <br>
+                    <div id="res5"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- array soma -->
+        <div class="section">
+            <h3><span class="section-icon"></span> soma de elementos de um array</h3>
+            <div class="section-grid">
+                <div class="section-text">
+                    <p>codigo simples que cria uma matriz 3x3 com numeros aleatorios de 1 a 20</p>
+                    <button onclick="soma_arr()">gerar</button>
+                    <div id="res6"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- busca linear -->
+        <div class="section">
+            <h3><span class="section-icon"></span> exemplo de um codigo de busca linear</h3>
+            <div class="section-grid">
+                <pre class="code">
+                    function buscaLinear(arr, elementoProcurado) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === elementoProcurado) {
+            return i; // retorna o índice onde o elemento foi encontrado
+        }
+    }
+    return -1; // retorna -1 se não encontrar
+}
+
+// Exemplo de uso:
+let numeros = [5, 12, 8, 20, 3, 9];
+let procurado = 20;
+
+let resultado = buscaLinear(numeros, procurado);
+
+if (resultado !== -1) {
+    console.log(`Elemento encontrado no índice ${resultado}`);
+} else {
+    console.log("Elemento não encontrado");
+}
+                </pre>
+                <br>
+                <div class="section-text">
+                    <sub-h3>O que é:</sub-h3>
+                    <p>Um algoritmo que procura um valor percorrendo o array do início ao fim.</p>
+                    <sub-h3>Como funciona:</sub-h3>
+                    <p>Olha cada posição do array.</p>
+                    <p>Compara com o valor procurado.</p>
+                    <p>Se encontrar → retorna o índice.</p>
+                    <p>Se chegar ao final e não encontrar → retorna -1.</p>
+
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
 
