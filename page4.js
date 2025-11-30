@@ -125,4 +125,4 @@ function soma_arr(){
     console.log(soma)
     res.innerHTML += `array: ${arr} </br> soma dos elementos: ${soma} `
 
-} soma_arr()
+}
