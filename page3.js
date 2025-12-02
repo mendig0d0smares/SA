@@ -1,10 +1,10 @@
 let res = document.getElementById('res')
-let usuario = document.getElementById('usuario')
-let senha = document.getElementById('senha')
+let arr = []
 
 function func_login() {
-    let arr = []
-    res.innerHTML += ` `
+    let usuario = document.getElementById('usuario').value
+    let senha = document.getElementById('senha').value
+    res.innerHTML = ` `
     if (usuario === " " || senha === " ") {
         res.innerHTML += "Preencha todos os requisitos!"
         console.log(arr)       
