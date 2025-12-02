@@ -89,23 +89,27 @@ function ordenar_bubblesort() {
 }
 
 
-function temperatura(){
+function temperatura() {
     let res = document.getElementById('res5')
-    let F = Number(document.getElementById('C').value)
-    let C = Number(document.getElementById('F').value)
+    let C = Number(document.getElementById('C').value)
+    let F = Number(document.getElementById('F').value)
     res.innerHTML = ``
-    
-    if(F === 0 && C > 0){
-        F = (C * 9 / 5) + 32
-        res.innerHTML += ` temperatura convertida em fahrenheit: ${F.toFixed(2)}`
 
-    }else if(C === 0){
-        C = (F - 32) * 5 / 9
-        res.innerHTML += ` temperatura convertida em celsius: ${C.toFixed(2)}`
-
+    if (!isNaN(C) && document.getElementById('C').value !== "") {
+        // Celsius → Fahrenheit
+        let convertido = (C * 9 / 5) + 32
+        res.innerHTML = `Temperatura em Fahrenheit: ${convertido.toFixed(2)}°F`
     }
 
+    else if (!isNaN(F) && document.getElementById('F').value !== "") {
+        // Fahrenheit → Celsius
+        let convertido = (F - 32) * 5 / 9
+        res.innerHTML = `Temperatura em Celsius: ${convertido.toFixed(2)}°C`
+    }
 
+    else {
+        res.innerHTML = `Preencha pelo menos um dos campos.`
+    }
 }
 
 function soma_arr(){
