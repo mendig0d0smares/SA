@@ -262,10 +262,11 @@
                 </div>
             </div>
         </div>
-<!-- display -->
+        <!-- display -->
         <div class="section">
-            <h3><span class="section-icon"></span> exemplo de programa para leitura de dados de um sensor analógico, acionando saídas digitais.</h3>
-                <pre class="code">
+            <h3><span class="section-icon"></span> exemplo de programa para leitura de dados de um sensor analógico,
+                acionando saídas digitais.</h3>
+            <pre class="code">
                     const express = require('express')
 const app = express()
 const { SerialPort, ReadlineParser } = require('serialport')
@@ -366,49 +367,66 @@ app.listen(PORT, hostname, ()=&gt;{
         </div>
 
 
-        <!-- calculadora -->
-        <div class="section">
-            <div class="center">
-                <h3><span class="section-icon"></span>calculadora</h3>
-                <div class="section-grid">
-                    <div class="section-text">
+<!-- video -->
+<div class="section">
+    <div class="center">
+        <h3><span class="section-icon"></span>video arduino</h3>
+        <div class="section-grid">
+            <div class="section-text">
+                <p>teste experimental do arduino UNO</p>
+                <iframe width="976" height="549" src="https://www.youtube.com/embed/BqlYJQgZ7Cg" title="Arduino"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 
-                        <p>ensira 2 das caixas com os valores desejados e o valor vazio sera calculado utilizando a lei
-                            de Ohm</p>
-                        <input type="number" id="R" placeholder="resistencia"><br>
-                        <input type="number" id="V" placeholder="voltagem"><br>
-                        <input type="number" id="I" placeholder="corrente"><br>
-                        <button onclick="calcularOhm()">calcular</button>
-                        <div id="res"></div>
 
-                    </div>
+    <!-- calculadora -->
+    <div class="section">
+        <div class="center">
+            <h3><span class="section-icon"></span>calculadora</h3>
+            <div class="section-grid">
+                <div class="section-text">
+
+                    <p>ensira 2 das caixas com os valores desejados e o valor vazio sera calculado utilizando a lei
+                        de Ohm</p>
+                    <input type="number" id="R" placeholder="resistencia"><br>
+                    <input type="number" id="V" placeholder="voltagem"><br>
+                    <input type="number" id="I" placeholder="corrente"><br>
+                    <button onclick="calcularOhm()">calcular</button>
+                    <div id="res"></div>
+
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- calculadora potencia -->
-        <div class="section">
-            <div class="center">
-                <h3><span class="section-icon"></span>calculadora</h3>
-                <div class="section-grid">
-                    <div class="section-text">
+    <!-- calculadora potencia -->
+    <div class="section">
+        <div class="center">
+            <h3><span class="section-icon"></span>calculadora de potencia</h3>
+            <div class="section-grid">
+                <div class="section-text">
 
-                        <p>ensira 2 das caixas com os valores desejados para calcular a potencia</p>
-                        <input type="number" id="R2" placeholder="resistencia"><br>
-                        <input type="number" id="V2" placeholder="voltagem"><br>
-                        <input type="number" id="I2" placeholder="corrente"><br>
-                        <button onclick="calcular_potencia()">calcular</button>
-                        <div id="res2"></div>
+                    <p>ensira 2 das caixas com os valores desejados para calcular a potencia</p>
+                    <input type="number" id="R2" placeholder="resistencia"><br>
+                    <input type="number" id="V2" placeholder="voltagem"><br>
+                    <input type="number" id="I2" placeholder="corrente"><br>
+                    <button onclick="calcular_potencia()">calcular</button>
+                    <div id="res2"></div>
 
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 Situação de Aprendizagem - Fundamentos da Eletrônica</p>
+        <p>&copy; 2025 Caldart INC. - Fundamentos da Eletrônica - contato por email: pedro_warmling@estudante.sesisenai.org.br</p>
     </footer>
 </body>
 
